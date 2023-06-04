@@ -11,4 +11,7 @@ migrateup:
 migratedown:
 	migrate -path db/migration -database "$(DB_URL)" -verbose down
 
-.PHONY: migrateup migratedown migratecreate
+sqlc:
+	sqlc generate
+
+.PHONY: migrateup migratedown migratecreate sqlc
