@@ -19,4 +19,7 @@ sqlc:
 test:
 	go test -v -cover ./...
 
+mock:
+	mockgen -package mockdb -destination db/mock/store.go gopostdockubci/db/sqlc Store
+
 .PHONY: run migrateup migratedown migratecreate sqlc
