@@ -13,6 +13,12 @@ migrateup:
 migratedown:
 	migrate -path db/migration -database "$(DB_URL)" -verbose down
 
+migrateup1:
+	migrate -path db/migration -database "$(DB_URL)" -verbose up 1
+
+migratedown1:
+	migrate -path db/migration -database "$(DB_URL)" -verbose down 1
+
 sqlc:
 	sqlc generate
 
